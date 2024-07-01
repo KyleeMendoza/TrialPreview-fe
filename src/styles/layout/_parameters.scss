@@ -1,0 +1,81 @@
+@import '../utils/mixins';
+@import "@fontsource/barlow";
+
+$font-primary: #00E0B3;
+
+.parameter {
+    width: 100%;
+    @include flex-col;
+    gap: 30px;
+    height: 80%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &_block {
+        @include flex-row;
+
+        &_label {
+            flex-basis: 33%;
+
+            &_title {
+                color: white;
+                font-size: clamp(1rem, -1.2857rem + 2.8571vw, 2.5rem);
+                text-transform: capitalize;
+                font-family: 'Barlow', sans-serif;
+                margin: 0;
+            }
+            &_description {
+                font-size: clamp(0.5rem, -0.2619rem + 0.9524vw, 1rem);
+                color: gray;
+                text-transform: capitalize;
+                font-family: 'Barlow', sans-serif;
+                margin: 0;
+            }
+        }
+        &_input {
+            flex: 1 1 0%;
+
+            &_duration {
+                @include flex-row;
+                gap: 10px;
+                height: 100%;
+
+                &_choice {
+                    @include flex-row;
+                    background-color: #1D1D1D;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20%;
+                    font-size: clamp(1rem, 0.2381rem + 0.9524vw, 1.5rem);
+                    color: white;
+                    text-transform: uppercase;
+                    font-family: 'Barlow', sans-serif;
+                    margin: 0;
+                    cursor: pointer;
+                }
+            }
+
+            &_rewards, &_payouts {
+                width: 90%;
+                height: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: none;
+                background-color: #1D1D1D;
+                font-size: clamp(0.8rem, 0.4952rem + 0.381vw, 1rem);
+                color: white;
+                text-transform: capitalize;
+                font-family: 'Barlow', sans-serif;
+
+            }
+        }
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}

@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Objectives from "./layout/Objectives";
+import Parameters from "./layout/Parameters";
+import Preview from "./layout/Preview";
+import "./styles/layout/_container.scss";
+import { TrialProvider } from "./context/TrialContext";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <TrialProvider>
+      <main className="main">
+        <div className="content">
+          <div className="content_right">
+            <div className="content_right_objective">
+              <p className="section_title">set ojectives</p>
+              <Objectives />
+            </div>
+            <div className="content_right_parameter">
+              <p className="section_title">set trial parameters</p>
+              <Parameters />
+            </div>
+          </div>
+          <div className="content_left">
+            <p className="section_title">trial preview</p>
+            <Preview />
+          </div>
+        </div>
+      </main>
+    </TrialProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,111 @@
+@import '../utils/mixins';
+@import "@fontsource/barlow";
+
+$font-primary: #00E0B3;
+
+.preview {
+    @include flex-row;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1 1 0%;
+
+    &_item {
+        background-color: black;
+        @include flex-col;
+        justify-content: space-between;
+        width: 70%;
+        height: 90%;
+        padding: clamp(0.625rem, -0.3274rem + 1.1905vw, 1.25rem);
+        position: relative;
+        overflow: hidden;
+
+        &_top {
+            @include flex-col;
+            gap: clamp(1.5625rem, -0.8185rem + 2.9762vw, 3.125rem);
+            justify-content: space-between;
+            z-index: 1;
+
+            &_name {
+                @include flex-row;
+                justify-content: space-between;
+                align-items: center;
+
+                p {
+                    font-size: clamp(0.6rem, -0.0095rem + 0.7619vw, 1rem);
+                    color: white;
+                    text-transform: capitalize;
+                    font-family: 'Barlow', sans-serif;
+                    margin: 0;
+                }
+
+                .live {
+                    font-size: clamp(0.6rem, -0.0095rem + 0.7619vw, 1rem);
+                    background-color: red;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    border-radius: 10px;
+                    color: white;
+                    text-transform: capitalize;
+                    font-family: 'Barlow', sans-serif;
+                    margin: 0;
+                }
+            }
+
+            &_reward {
+                @include flex-col;
+                gap: 4px;
+
+                p {
+                    font-size: clamp(0.6rem, -0.0095rem + 0.7619vw, 1rem);
+                    color: gray;
+                    text-transform: uppercase;
+                    font-family: 'Barlow', sans-serif;
+                    margin: 0;
+                }
+                p:not(:first-of-type) {
+                    font-size: clamp(1.5rem, -0.0238rem + 1.9048vw, 2.5rem);
+                    color: white;
+
+                }
+            }
+        }
+
+        &_bottom {
+            @include flex-col;
+            // gap: clamp(1.5625rem, -0.8185rem + 2.9762vw, 3.125rem);
+            gap: clamp(0.5rem, -3.5rem + 5vw, 3.125rem);
+            justify-content: space-between;
+
+            &_remaining {
+                @include flex-col;
+                gap: 4px;
+
+                p {
+                    font-size: clamp(0.6rem, -0.0095rem + 0.7619vw, 1rem);
+                    color: gray;
+                    text-transform: uppercase;
+                    font-family: 'Barlow', sans-serif;
+                    margin: 0;
+                }
+                p:not(:first-of-type) {
+                    font-size: clamp(1.5rem, -0.0238rem + 1.9048vw, 2.5rem);
+                    color: white;
+
+                }
+
+            }
+        }
+
+        
+    }
+}
+
+.diamondImg {
+    position: absolute;
+    right: 0;
+    width: clamp(10rem, -8.2857rem + 22.8571vw, 22rem);
+    transform: translateX(2rem);
+    z-index: 0;
+}

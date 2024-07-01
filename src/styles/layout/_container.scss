@@ -1,0 +1,72 @@
+@import '../utils/mixins';
+@import "@fontsource/barlow";
+
+//Font styles
+$font-primary: #00E0B3;
+
+//Default styles
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+div, main {
+    box-sizing: border-box; 
+}
+
+//App
+.main {
+    height: 100vh;
+    padding: 20px;
+    @include flex-center;
+    background-image: url('../../assets/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+//Main content styles
+.content {
+    @include flex-row;
+    gap: 8px;
+    width: 100%;
+    min-height: 65%;
+
+    &_right {
+        @include flex-col;
+        gap: 8px;
+        flex-basis: 66%;
+        justify-content: center;
+        align-items: center;
+
+        &_objective, &_parameter {
+            @include border;
+            @include flex-col;
+            background-color: rgba(0, 0, 0, .5);
+            width: 100%;
+            flex: 1 1 0%;
+            padding: 20px;
+            justify-content: center;
+        }
+    }
+    &_left {
+        @include border;
+        @include flex-col;
+        background-color: rgba(0, 0, 0, .5);
+        padding: 20px;
+        flex: 1 1 0%;
+        margin: 0;
+    }
+}
+
+//Main title styles
+.section_title {
+    color: white;
+    font-size: clamp(1.5rem, -0.0238rem + 1.9048vw, 2.5rem);
+    text-transform: capitalize;
+    font-family: 'Barlow', sans-serif;
+    margin: 0;
+}
+
+

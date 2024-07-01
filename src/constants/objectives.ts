@@ -1,10 +1,4 @@
-type Objective = {
-  label: Array<{
-    display: string
-  }>
-  name: string
-  description: string
-}
+import { Objective } from "../Types"
 
 const objectives: Array<Objective> = [
   {
